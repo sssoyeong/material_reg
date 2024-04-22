@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  material_regression:
+    image: nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04
+    command: nvidia-smi
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
